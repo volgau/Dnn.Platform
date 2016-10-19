@@ -41,11 +41,11 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <NoWarn>1591, 3001, 3002, 1574, 1573</NoWarn>
-    <LangVersion>default</LangVersion>
+    <LangVersion>Default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>bin\DotNetNuke.XML</DocumentationFile>
+    <DocumentationFile>bin\DotNetNuke.xml</DocumentationFile>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>true</DebugSymbols>
     <WarningLevel>4</WarningLevel>
@@ -102,11 +102,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -117,7 +115,6 @@
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web.Services" />
@@ -127,9 +124,26 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="DotNetNuke.WebUtility">
+      <HintPath>..\..\lib\DotNetNuke.WebUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Log4Net">
+      <HintPath>..\..\lib\DotNetNuke.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Instrumentation">
+      <HintPath>lib\DotNetNuke.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="CountryListBox">
+      <HintPath>lib\CountryListBox.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Web.Client">
+      <HintPath>lib\DotNetNuke.Web.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Services.Syndication">
+      <HintPath>lib\DotNetNuke.Services.Syndication.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Web.UI">
-      <HintPath>..\Components\Telerik\bin\Telerik.Web.UI.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>lib\Telerik.Web.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -1773,31 +1787,5 @@
     <Compile Include="Common\Utilities\FileSystemPermissionVerifier.cs" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\Controls\CountryListBox\CountryListBox.csproj">
-      <Project>{ca056730-5759-41f8-a6c1-420f9c0c63e7}</Project>
-      <Name>CountryListBox</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DotNetNuke.Instrumentation\DotNetNuke.Instrumentation.csproj">
-      <Project>{ddf18e36-41a0-4ca7-a098-78ca6e6f41c1}</Project>
-      <Name>DotNetNuke.Instrumentation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DotNetNuke.Log4net\DotNetNuke.Log4Net.csproj">
-      <Project>{04f77171-0634-46e0-a95e-d7477c88712e}</Project>
-      <Name>DotNetNuke.Log4Net</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DotNetNuke.Web.Client\DotNetNuke.Web.Client.csproj">
-      <Project>{537b45eb-2ec3-4849-bc6b-d761f43674a5}</Project>
-      <Name>DotNetNuke.Web.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DotNetNuke.WebUtility\DotNetNuke.WebUtility.vbproj">
-      <Project>{4912f062-f8a8-4f9d-8f8e-244ebee1acbd}</Project>
-      <Name>DotNetNuke.WebUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Syndication\DotNetNuke.Syndication.csproj">
-      <Project>{86af9531-d270-4c18-a8b9-c67a8782af69}</Project>
-      <Name>DotNetNuke.Syndication</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="Module.build" />
 </Project>

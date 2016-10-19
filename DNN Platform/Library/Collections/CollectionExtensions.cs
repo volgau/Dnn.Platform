@@ -111,9 +111,9 @@ namespace DotNetNuke.Collections
         /// </exception>
         /// <exception cref="ArgumentNullException"><paramref name="dictionary"/> is <c>null</c></exception>
         /// <exception cref="ArgumentException"><paramref name="dictionary"/> does not contain a value for <paramref name="key"/></exception>
-        public static T GetValue<T>(this IDictionary dictionary, string key)
+        public static T GetValue<T> (this IDictionary dictionary, string key)
         {
-            return dictionary.GetValue(key, ConvertValue<T>);
+            return dictionary.GetValue (key, (Func<object,T>) ConvertValue<T>);
         }
 
         /// <summary>Gets the value from the lookup.</summary>
@@ -428,7 +428,7 @@ namespace DotNetNuke.Collections
         /// <exception cref="ArgumentNullException"><paramref name="dictionary"/> is <c>null</c></exception>
         public static T GetValueOrDefault<T>(this IDictionary dictionary, string key, T defaultValue)
         {
-            return dictionary.GetValueOrDefault(key, defaultValue, ConvertValue<T>);
+            return dictionary.GetValueOrDefault(key, defaultValue, (Func<object, T>) ConvertValue<T>);
         }
 
         /// <summary>Gets the value from the lookup, returning <paramref name="defaultValue"/> if the value doesn't exist.</summary>

@@ -11,6 +11,7 @@
 *.sln.docstates
 *.local.sln
 *.sln.GhostDoc.xml
+*.userprefs
 
 ## Ignore VS2015/Roslyn artifacts
 *.sln.ide/
@@ -43,7 +44,7 @@
 *.gitmodules
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
-#packages/
+packages/
 
 # Visual Studio profiler
 *.psess
