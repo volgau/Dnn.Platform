@@ -124,12 +124,6 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="DotNetNuke.WebUtility">
-      <HintPath>..\..\lib\DotNetNuke.WebUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetNuke.Log4Net">
-      <HintPath>..\..\lib\DotNetNuke.Log4Net.dll</HintPath>
-    </Reference>
     <Reference Include="DotNetNuke.Instrumentation">
       <HintPath>lib\DotNetNuke.Instrumentation.dll</HintPath>
     </Reference>
@@ -144,6 +138,12 @@
     </Reference>
     <Reference Include="Telerik.Web.UI">
       <HintPath>lib\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.WebUtility">
+      <HintPath>lib\DotNetNuke.WebUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Log4Net">
+      <HintPath>lib\DotNetNuke.Log4Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
