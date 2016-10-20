@@ -20,6 +20,7 @@
 
 #endregion
 
+using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -98,7 +99,10 @@ namespace DotNetNuke.Web.InternalServices
 	        {
 				//DNN-7099: the deleted modules won't show in page, so when the module index calculated from client, it will lost the 
 				//index count of deleted modules and will cause order issue.
-		        var deletedModules = ModuleController.Instance.GetTabModules(postData.TabId).Values.Where(m => m.IsDeleted);
+                //DNN-8766: count deleted modules only on target pane, not entire page
+                var deletedModules = ModuleController.Instance.GetTabModules(postData.TabId).Values
+                    .Where(m => m.IsDeleted && string.Equals(m.PaneName, postData.Pane, StringComparison.OrdinalIgnoreCase));
+                
 		        foreach (var module in deletedModules)
 		        {
 			        if (module.ModuleOrder < moduleOrder)
