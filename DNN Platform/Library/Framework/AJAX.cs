@@ -74,7 +74,8 @@ namespace DotNetNuke.Framework
                         {
 							if (checkCdn)
 							{
-								scriptManager.EnableCdn = Host.EnableMsAjaxCdn;
+                                // FIXME: System.Web is too old in Mono?
+                                // scriptManager.EnableCdn = Host.EnableMsAjaxCdn;
 								scriptManager.CdnSettings.TelerikCdn = Host.EnableTelerikCdn ? TelerikCdnMode.Enabled : TelerikCdnMode.Disabled;
 								if (scriptManager.CdnSettings.TelerikCdn != TelerikCdnMode.Disabled && !string.IsNullOrEmpty(Host.TelerikCdnBasicUrl))
 								{
