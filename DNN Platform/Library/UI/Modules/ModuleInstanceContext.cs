@@ -814,7 +814,8 @@ namespace DotNetNuke.UI.Modules
             {
                 if (!UIUtilities.IsLegacyUI(ModuleId, controlKey, PortalId) && (url.Contains("ctl")))
                 {
-                    url = UrlUtils.PopUpUrl(url, null, PortalSettings, false, pageRedirect);
+                    // HACK: Close popup w/o reloading a page 
+                    url = UrlUtils.PopUpUrl(url, null, PortalSettings, false, pageRedirect, 550, 950, false, string.Empty);
                 }
             }
             return url;
